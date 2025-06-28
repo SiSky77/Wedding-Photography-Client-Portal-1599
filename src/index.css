@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fefcf8;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7d2c7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a3b5a3;
+}
+
+/* Custom form styles */
+.form-input {
+  @apply w-full px-4 py-3 border border-sage-200 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 bg-white/80 backdrop-blur-sm;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-sage-700 mb-2 font-libre;
+}
+
+.btn-primary {
+  @apply bg-sky-600 hover:bg-sky-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply bg-sage-100 hover:bg-sage-200 text-sage-700 font-medium py-3 px-6 rounded-lg transition-all duration-200 border border-sage-200;
+}
+
+.section-card {
+  @apply bg-white/70 backdrop-blur-sm rounded-xl shadow-lg border border-sage-100 p-6 transition-all duration-300 hover:shadow-xl;
+}
+
+/* Help Hub z-index override to ensure it appears above header and sidebar */
+[data-questlabs-helphub] {
+  z-index: 9999 !important;
+}
+
+/* Ensure help hub button appears above navigation */
+.quest-help-button {
+  z-index: 9999 !important;
+  position: fixed !important;
+}
+
+/* Override any conflicting z-index from header */
+header {
+  z-index: 50;
+}
+
+/* Ensure help hub modal appears above everything */
+.quest-help-modal {
+  z-index: 10000 !important;
+}
